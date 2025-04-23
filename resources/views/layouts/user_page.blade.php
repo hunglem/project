@@ -31,6 +31,7 @@
                 <li><a href="/" class="hover:text-orange-500">Máy chơi game</a></li>
                 <li><a href="/" class="hover:text-orange-500">Phụ Kiện</a></li>
                 <li><a href="/" class="hover:text-orange-500">Đĩa Game</a></li>
+                <li><a href="/" class="hover:text-orange-500">Tin tức</a></li>
             </ul>
             <div class="flex space-x-4">
                 <a href="/login" class="hover:text-orange-500">Đăng nhập</a>
