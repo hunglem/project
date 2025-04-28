@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('payment', function (Blueprint $table) {
             $table->id();
             $table->integer('amount')->default(0);
-            $table->text('method');
+            $table->enum('payment_method', ['Credit Card', 'Bank Transfer', 'Cash']);
+            $table->enum('payment_status', ['Pending', 'Completed', 'Failed', 'Refunded']);
+            $table->timestamps();
         });      
     }
 

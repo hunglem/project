@@ -17,8 +17,8 @@
             <a href="/" class="text-lg font-bold">PLAY-Store</a>
             <div class="flex space-x-4">
                 <a href="/sitemap" class="hover:underline">Tất cả sản phẩm</a>
-                <a href="tel:0868302123" class="hover:underline">(034) 309.1525</a>
-                <a href="mailto:cskh@tncstore.vn" class="hover:underline">cskh@playstore.vn</a>
+                <a href="/tel" class="hover:underline">(034) 309.1525</a>
+                <a href="/mail" class="hover:underline">cskh@playstore.vn</a>
             </div>
         </div>
     </header>
@@ -31,7 +31,7 @@
                 <li><a href="/" class="hover:text-orange-500">Máy chơi game</a></li>
                 <li><a href="/" class="hover:text-orange-500">Phụ Kiện</a></li>
                 <li><a href="/" class="hover:text-orange-500">Đĩa Game</a></li>
-                <li><a href="/" class="hover:text-orange-500">Tin tức</a></li>
+                <li><a href="/" class="hover:text-orange-500">Hướng Dẫn</a></li>
             </ul>
             <div class="flex space-x-4">
                 <a href="/login" class="hover:text-orange-500">Đăng nhập</a>
