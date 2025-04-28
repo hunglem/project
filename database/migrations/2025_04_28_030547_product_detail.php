@@ -17,7 +17,6 @@ return new class extends Migration
             $table->decimal('price', 10, 0)->default(0); 
             $table->text('color')->nullable();
             $table->text('memory_info')->nullable();
-            $foreignKey = $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
         });
     }
 

@@ -14,10 +14,10 @@ use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
 
-Route::get('/', [UserController::class, 'userPage'])->name('home');
+Route::get('/', [UserController::class, 'userPage'])->name('home'); // Corrected method name
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('layouts.userpage'); // Corrected to remove '.blade.php'
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -26,7 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';    
 
 Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->middleware(['auth'])->name('admin.dashboard');
 Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
