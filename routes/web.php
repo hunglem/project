@@ -2,9 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
-use App\Http\Middleware\Role;
+use App\Http\Middleware\AuthAdmin;
 use App\Http\kennel;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductCategoryController;
@@ -15,13 +16,14 @@ use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\HomeController;
 
-Route::get('/', [HomeController::class, 'index'])->name('home.index'); // Corrected method name
+Auth::routes();
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/account-dashboard', [UserController::class, 'index'])->name('user.index'); 
+    Route::get('/', [UserController::class, 'index'])->name('user.index'); 
 });
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth',AuthAdmin::class])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index'); 
 });
 
@@ -48,3 +50,8 @@ Route::resource('product-details', ProductDetailController::class);
 Route::resource('orders', OrderController::class);
 Route::resource('order-details', OrderDetailController::class);
 Route::resource('payments', PaymentController::class);
+
+Route::fallback(function () {
+    return redirect()->route('home.index');
+});
+

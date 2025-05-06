@@ -7,9 +7,8 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function userPage()
+    public function index()
     {
-        $products = Product::all(); // Fetch all products from the database
-        return view('layouts.userpage', compact('products'));
+        return view('user.index');
     }
 }

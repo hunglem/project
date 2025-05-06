@@ -388,7 +388,7 @@
     <div class="container">
       <div class="header-desk header-desk_type_1">
         <div class="logo">
-          <a href="{{route('home.index')}}">
+          <a href="{{route('home.index') }}">
             <img src="{{asset ('assets/images/logo.png') }}" alt="Uomo" class="logo__image d-block" />
           </a>
         </div>
@@ -471,7 +471,7 @@
           </div>
           @else
           <div class="header-tools__item hover-container">
-            <a href="{{ Auth::user() -> role === 'admin' ?route('admin.index'): route(user.index) }}" class="header-tools__item">
+            <a href="{{ Auth::user()->role === 'admin' ? route('admin.index') : route('user.index') }}" class="header-tools__item">
               <span class="text-uppercase text-secondary fw-medium mb-4">{{ Auth::user()->name }}</span>
               <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
